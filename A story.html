@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+//<title>Our Love Story</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2021—11-17,初见</span><br />
+			<span class="space"/><span class="comments">*2021-11-28.相拥</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy i = <span class="keyword">new</span> Boy(<span class="string">"Mark Lee"</span>);<br />
+			Girl u = <span class="keyword">new</span> Girl(<span class="string">"Sonia Wang"</span>);<br />
+			<span class="comments">// Fall in love river. </span><br />
+			The boy loves the girl;<br />
+			<span class="comments">// They love each other.</span><br />
+			The girl loves the boy.<br />
+			<span class="comments">// As time goes on,</span><br />
+			The boy can not be separated the girl;<br />
+			<span class="comments">// At the same time,</span><br />
+			The girl can not be separated the boy;(Maybe she won't admmit the fact!2333)<br />
+			<span class="comments"> He still remembers that day:</span><br />
+			<span class="comments"> when he first met her,</span><br />
+			<span class="keyword">The boy</span> began to noticed that she is so cute and began to <span class="keyword">crush</span>!<br />
+			<span class="comments"> During being together, they are so sweet and happy!</span><br />
+			<span class="placeholder"/><span class="comments">// Although there was some hardship between them,</span><br />
+			<span class="placeholder"/> // the boy is confident that they will overcome together. </span><br />
+			<span class="placeholder"/>The boy has but one dream:<br />
+			<span class="placeholder"/><span class="comments">// he hopes they can share the burden,</span><br />
+			<span class="placeholder"/>along with walking, hope she always love and support him!<br />
+			<br>
+			<br>
+			Here, AnAn, I wanna say to you:<br />
+			Babe, I love you! I can't leave you alone! I am waiting for you since seperated last time.<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					安安，这是我们相爱在一起的时光:
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love u forever and ever.<br/>
+					<div class="signature">-- Mark Lee</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2021, 10, 27);
+together.setHours(24);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
